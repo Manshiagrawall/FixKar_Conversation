@@ -575,7 +575,7 @@ async function processAudio(req, res, modelPrompt, chatModel) {
 
 // Route to upload and process audio for navigation actions
 app.post("/upload-navigate", upload.single("file"), (req, res) => {
-  const navigatePrompt = "You are an app navigator. Users will give you voice commands and you have to map them to actions. \n\nThere are only four actions available: Dashboard, Services, Chat, Profile\nIf the query does not match any of these four keys, map it to Sorry.\n\nHere are a few examples:\n\nUser: I want to see the dashboard.\nAction: Dashboard\n\nUser: Navigate me to the services page.\nAction: Services\n\nUser: Take me to profile\nAction: Profile\n\nUser: I need to talk to you\nAction: Chat\nUser: I want to log out\nAction: Logout\nRespond according to the data above\nIf the user says things similar to above, respond accordingly\n";
+  const navigatePrompt = "You are an app navigator. Users will give you voice commands and you have to map them to actions. \n\nThere are only four actions available: Dashboard, Services, Chat, Profile\nIf the query does not match any of these four keys, map it to Sorry.\n\nHere are a few examples:\n\nUser: I want to see the dashboard.\nAction: Dashboard\n\nUser: Navigate me to the services page.\nAction: Services\n\nUser: Take me to profile\nAction: Profile\n\nUser: I need to talk to you\nAction: Chat\nUser: I want to logout\nAction: logout\nRespond according to the data above\nIf the user says things similar to above, respond accordingly\n";
   processAudio(req, res, navigatePrompt, navigateModel);
 });
 
